@@ -9,8 +9,8 @@
     <meta name="author" content="RC Team @SoyBorias">
     <link type="text/plain" rel="author" href="humans.txt">
 
-    <link rel="stylesheet" href="static/tpl/v1/css/foundation.min.css?v=18">
-    <link rel="stylesheet" href="static/tpl/v1/css/css.css?v=52">
+    <link rel="stylesheet" href="static/tpl/v1/css/foundation.min.css?v=1">
+    <link rel="stylesheet" href="static/tpl/v1/css/css.css?v=1">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto">
     <script src="//use.fontawesome.com/1903d3bd8c.js"></script>
     <script src="js/vendor/modernizr.js"></script>
