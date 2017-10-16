@@ -22,12 +22,12 @@ $title = 'Aprende XYZ';
 
       <div class="frame">
         <h1>Aprende</h1>
-        <img src="static/images/logo.svg" alt="xyz"><br/><br/>
+        <img src="static/images/logo.svg" alt="xyz" class="logo"><br/><br/>
 
         <form id="frmLogin" action="" autocomplete="off">
           <div class="row collapse postfix-round">
             <div class="small-9 columns">
-              <input id="txtUsuario" type="text" placeholder="Documento" class="transparent azulSub" aria-label="Documento" tabindex="1" required autocomplete="off" />
+              <input id="txtUsuario" type="text" placeholder="Usuario" class="transparent azulSub" aria-label="Usuario" tabindex="1" required autocomplete="off" />
             </div>
             <div class="small-3 columns">
               <a href="#" class="button postfix transparent fs15"><i class="fa fa-users"></i></a>
