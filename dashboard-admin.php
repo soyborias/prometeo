@@ -5,7 +5,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
   include_once('jupiter/code/fxVista.php');
 
   // Vars
-  $title = 'Dashboard Administración P&G';
+  $title = 'Dashboard Administración';
   include_once('jupiter/code/fxMenu.php');
   $mnuMain = crearMnuAdmin('dashboard', null);
   $mnuMainMobile = crearMnuAdminMobile('dashboard', null);
@@ -139,7 +139,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
     </section>
 
     <footer>
-      <p class="text-center">Procter & Gamble. All Rights Reserved. Powered by Inpaktu. </p>
+      <?php include_once('code/footer.php'); ?>
     </footer>
 
   </main>
