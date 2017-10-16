@@ -1,0 +1,3 @@
+<?php
+$template = '<!DOCTYPE html><body style=\"font-family:helvetica\"><table width=\"620\"><div style=\"text-align: center;\"><img src=\"http://entrenatepg.com/static/images/isotipo-azul.png\"></div><h1 style=\"text-align: center; color:#1563a8;\">ENTRENATE</h1><p>*|MC:NOMBRE|*, Has solicitado <strong>cambiar tu contraseña </strong><p><a href=\"*|MC:LINK|*\">Clic Aqui</a> para generar una nueva contraseña.</p><p><strong>Entrenate P&G</strong></p></table></body></html>';
+?>

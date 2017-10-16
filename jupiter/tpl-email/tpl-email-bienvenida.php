@@ -1,0 +1,3 @@
+<?php
+$template = '<!DOCTYPE html><body style=\"font-family:helvetica\"><table width=\"620\"><h2 style=\"text-align: center; color:#FA5500;\">BIENVENIDO A</h2><div style=\"text-align: center;\"><h1 style=\"text-align: center; color:#1563a8;\">ENTRÉNATE</h1><br><img src=\"http://entrenatepg.com/static/images/isotipo-azul.png\"></div><p><span style=\"line-height:1.6em\"> Felicitaciones *|MC:NOMBRE|*,<br><br>Te has registrado y has sido activado correctamente a la plataforma.<br>Ingresar a <a href=\"http://entrenatepg.com\">entrenatepg.com</a><br><br>Te damos la bienvenida a nuestra gran familia.</p><p>¡Exitos!<br/><strong>Entrenate P&G</strong></p></table></body></html>';
+?>

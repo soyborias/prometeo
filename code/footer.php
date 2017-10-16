@@ -1,0 +1,1 @@
+<p class="text-center">P&G All Rights Reserved. Powered by Inpaktu.</p>

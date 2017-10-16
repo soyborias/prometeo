@@ -1,0 +1,37 @@
+/* TEAM */
+	Chef: Roberto Martinez Jara
+	Contact: soyBorias [at] gmail.com
+	Twitter: @soyBorias
+	From: Arequipa, Peru
+
+	UI developer:
+	Twitter:
+	From: 
+
+	Illustrator:
+	Twitter:
+	From:
+
+	Back end:
+	Twitter:
+	From: 
+
+	Web designer:
+	Twitter:
+	From:
+
+/* THANKS */
+
+	(First) Coordinator : 
+	Twitter: @
+	From: Peru
+
+
+/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
+/* zurb.com */
+/* humanstxt.org */
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery, Orbit, Reveal
+  Software: Sublime, Git, Stylus, Notepad++, FileZilla, Adoce CS
