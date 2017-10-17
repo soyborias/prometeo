@@ -6,7 +6,7 @@ if(isset($_GET['logout'])){
   session_destroy();
 }
 
-$title = 'Aprende XYZ';
+$title = 'AprendeXYZ';
 ?>
 <!doctype html>
 <html class="no-js" lang="es">
@@ -21,7 +21,7 @@ $title = 'Aprende XYZ';
     <section id="login">
 
       <div class="frame">
-        <h1>Aprende</h1>
+        <h1>AprendeXYZ</h1>
         <img src="static/images/logo.svg" alt="xyz" class="logo"><br/><br/>
 
         <form id="frmLogin" action="" autocomplete="off">
