@@ -208,6 +208,7 @@ if (isset($_SESSION['username'])){
   var duply  = parseInt(<?php print($duply); ?>);
   var nPlay  = 0;
   var player;
+  var time_update_interval;
 
   function iniciar(){
     $(document).foundation();
@@ -225,8 +226,6 @@ if (isset($_SESSION['username'])){
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
-        width: 600,
-        height: 400,
         videoId: 'aMK5uDoQXfI',
         playerVars: {
             color: 'white',
