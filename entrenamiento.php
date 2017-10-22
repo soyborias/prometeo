@@ -127,6 +127,7 @@ if (isset($_SESSION['username'])){
                     <div class="video">
                       <!-- <iframe id="player2" src="<?php print $curso_video; ?>" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe> -->
                       <div id="video-placeholder"></div>
+                      <p><span id="current-time">0:00</span> / <span id="duration">0:00</span></p>
                     </div>
                     <span class="status label warning" id="msgVideo"><i class="fa fa-chevron-right"></i> Empezar</span>
                     <div class="title">
@@ -250,7 +251,7 @@ function initialize(){
     // the elapsed part of the progress bar every second.
     time_update_interval = setInterval(function () {
         updateTimerDisplay();
-        updateProgressBar();
+        //updateProgressBar();
     }, 1000)
 
 }
