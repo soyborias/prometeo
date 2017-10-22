@@ -125,7 +125,8 @@ if (isset($_SESSION['username'])){
                 <div class="small-12 columns">
                   <div class="vPlayer vp-initial">
                     <div class="video">
-                      <iframe id="player2" src="<?php print $curso_video; ?>" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe>
+                      <!-- <iframe id="player2" src="<?php print $curso_video; ?>" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe> -->
+                      <div id="video-placeholder"></div>
                     </div>
                     <span class="status label warning" id="msgVideo"><i class="fa fa-chevron-right"></i> Empezar</span>
                     <div class="title">
@@ -189,6 +190,7 @@ if (isset($_SESSION['username'])){
 <?php include_once('code/script.php'); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.4/jquery.easypiechart.min.js"></script>
 <script src="//fast.wistia.net/static/iframe-api-v1.js"></script>
+<!-- <script src="https://www.youtube.com/iframe_api"></script> -->
 <script>
   $(document).on('ready', iniciar);
   var auth  = "";
@@ -204,6 +206,7 @@ if (isset($_SESSION['username'])){
   var status = parseInt(<?php print($status); ?>);
   var duply  = parseInt(<?php print($duply); ?>);
   var nPlay  = 0;
+  var player;
 
   function iniciar(){
     $(document).foundation();
@@ -211,11 +214,72 @@ if (isset($_SESSION['username'])){
     $('.vPlayer a').on('click', goLink);
     $('#btnCuestionario').on('click', goQuestions);
 
+/*
     var video = document.getElementById("player2").wistiaApi;
     video.bind("play", function() { iniciarVideo(); });
     video.bind("secondchange", function(t) { onPlaying(t); });
     video.bind("end", function() { terminarVideo(); });
+*/
   };
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-placeholder', {
+        width: 600,
+        height: 400,
+        videoId: 'aMK5uDoQXfI',
+        playerVars: {
+            color: 'white',
+            playlist: ''
+        },
+        events: {
+            onReady: initialize
+        }
+    });
+}
+
+function initialize(){
+
+    // Update the controls on load
+    updateTimerDisplay();
+    updateProgressBar();
+
+    // Clear any old interval.
+    clearInterval(time_update_interval);
+
+    // Start interval to update elapsed time display and
+    // the elapsed part of the progress bar every second.
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        updateProgressBar();
+    }, 1000)
+
+}
+
+// This function is called by initialize()
+function updateTimerDisplay(){
+    // Update current time text display.
+    $('#current-time').text(formatTime( player.getCurrentTime() ));
+    $('#duration').text(formatTime( player.getDuration() ));
+}
+
+function formatTime(time){
+    time = Math.round(time);
+
+    var minutes = Math.floor(time / 60),
+    seconds = time - minutes * 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    return minutes + ":" + seconds;
+}
+
+$('#play').on('click', function () {
+    player.playVideo();
+});
+
+$('#pause').on('click', function () {
+    player.pauseVideo();
+});
 
   function goLink(e){
     e.preventDefault();
