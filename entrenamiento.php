@@ -242,7 +242,7 @@ function initialize(){
 
     // Update the controls on load
     updateTimerDisplay();
-    updateProgressBar();
+   // updateProgressBar();
 
     // Clear any old interval.
     clearInterval(time_update_interval);
