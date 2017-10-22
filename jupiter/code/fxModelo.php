@@ -5,7 +5,6 @@
 function getUserLogin($user_doc, $password, $db){
   $sql = 'SELECT `usuario_id`, `usuario_clave`, `usuario_rol`, `usuario_activo`, `usuario_picture`, `usuario_nombre`, `usuario_perfil`, `usuario_perfil_nivel`
     FROM `pg_usuarios`
-    #WHERE `usuario_doc` = "%s"
     WHERE `usuario_email` = "%s"
     LIMIT 1; ';
   $query = sprintf($sql, $user_doc);
