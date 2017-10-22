@@ -226,22 +226,23 @@ if (isset($_SESSION['username'])){
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
+        width: 100%,
+        height: 100%,
         videoId: 'aMK5uDoQXfI',
         playerVars: {
             color: 'white',
             playlist: ''
         },
         events: {
-            onReady: initialize
+            onReady: initialize,
+            onStateChange: onPlayerStateChange
         }
     });
 }
 
 function initialize(){
-
     // Update the controls on load
     updateTimerDisplay();
-   // updateProgressBar();
 
     // Clear any old interval.
     clearInterval(time_update_interval);
@@ -253,6 +254,16 @@ function initialize(){
         //updateProgressBar();
     }, 1000)
 
+}
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING){
+    // Inicia video
+  }
+  if (event.data == YT.PlayerState.ENDED) {
+    // fin video
+    alert('fin');
+  }
 }
 
 // This function is called by initialize()
