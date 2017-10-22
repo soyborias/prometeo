@@ -189,8 +189,8 @@ if (isset($_SESSION['username'])){
 
 <?php include_once('code/script.php'); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.4/jquery.easypiechart.min.js"></script>
-<script src="//fast.wistia.net/static/iframe-api-v1.js"></script>
-<!-- <script src="https://www.youtube.com/iframe_api"></script> -->
+<!-- <script src="//fast.wistia.net/static/iframe-api-v1.js"></script> -->
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
   $(document).on('ready', iniciar);
   var auth  = "";
