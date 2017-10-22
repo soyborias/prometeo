@@ -178,9 +178,9 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
                 <li><a href="?q=new">Nuevos</a></li>
                 <?php endif; ?>
                 <li><a href="?q=user">Participantes</a></li>
-                <li><a href="?q=super">Supervisores</a></li>
+                <li><a href="?q=super">Docentes</a></li>
                 <?php if ($_SESSION['rol'] == ROL_ADMIN): ?>
-                <li><a href="?q=jefe">Jefes</a></li>
+                <li><a href="?q=jefe">Directores</a></li>
                 <li><a href="?q=admin">Administradores</a></li>
                 <?php endif; ?>
               </ul>
@@ -202,8 +202,8 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
                   <tr>
                     <th width="20%">Nombre</th>
                     <th width="5%">Documento</th>
-                    <th width="10%">Distribuidora</th>
-                    <th width="10%">Sucursal</th>
+                    <th width="10%">Universidad</th>
+                    <th width="10%">Filial</th>
                     <th width="10%">Rol</th>
                     <th width="5%">Activar</th>
                     <th width="30%">Acciones</th>
@@ -245,7 +245,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 
                     <div class="row">
                       <div class="large-12 columns">
-                        <label>Distribuidora
+                        <label>Universidad
                           <select id="cboBuscarDistro" name="cboBuscarDistro" <?php print($readonly) ?>>
                             <?php print($opDistribuidoras); ?>
                           </select>
@@ -255,7 +255,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 
                     <div class="row">
                       <div class="large-12 columns">
-                        <label>Sucursal
+                        <label>Filial
                           <select id="cboBuscarSucursal" name="cboBuscarSucursal" <?php print($readonly) ?>>
                             <?php print($opSucursales); ?>
                           </select>
@@ -331,12 +331,12 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 <div id="myLocation" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <h2 id="modalTitle">ASIGNAR LOCACIÓN</h2>
 
-  <label>Distribuidora
+  <label>Universidad
     <select id="cboChangeDistribuidora">
       <?php echo $opDistribuidoras; ?>
     </select>
   </label>
-  <label>Sucursal
+  <label>Filial
     <select id="cboChangeSucursal">
       <?php echo $opSucursales; ?>
     </select>
@@ -347,9 +347,9 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 </div>
 
 <div id="mySupervisor" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">ASIGNAR SUPERVISOR</h2>
+  <h2 id="modalTitle">ASIGNAR DOCENTE</h2>
 
-  <label>Supervisor
+  <label>Docente
     <select id="cboChangeSupervisor">
       <?php echo $opSuper; ?>
     </select>
@@ -373,7 +373,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 </div>
 
 <div id="myPerfil" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">ASIGNAR PERFIL A SUPERVISAR</h2>
+  <h2 id="modalTitle">ASIGNAR PERFIL A DOCENTE</h2>
 
   <label>
     <select id="cboChangePerfil">
@@ -402,12 +402,12 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
       <?php print $opPerfil; ?>
     </select>
   </label>
-  <label>Distribuidora
+  <label>Universidad
     <select id="cboUserDistribuidora" <?php print($readonly) ?>>
       <?php echo $opDistribuidoras; ?>
     </select>
   </label>
-  <label>Sucursal
+  <label>Filial
     <select id="cboUserSucursal" <?php print($readonly) ?>>
       <?php echo $opSucursales; ?>
     </select>
@@ -424,7 +424,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 </div>
 
 <div id="myPerfil" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">ASIGNAR PERFIL A SUPERVISAR</h2>
+  <h2 id="modalTitle">ASIGNAR PERFIL A DOCENTE</h2>
 
   <label>
     <select id="cboChangePerfil">
@@ -437,7 +437,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 </div>
 
 <div id="mySupervisores" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">ASIGNAR SUPERVISORES AL JEFE</h2>
+  <h2 id="modalTitle">ASIGNAR DIRECTOR</h2>
 
   <div class="mDown1">
     <select multiple="multiple" id="cboSupervisores" name="cboSupervisores[]">

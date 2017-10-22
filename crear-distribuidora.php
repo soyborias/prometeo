@@ -57,7 +57,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
         <div class="large-12 columns">
 
           <div>
-            <h4 class="azulMain left bold">PANEL DE DISTRIBUIDORAS</h4>
+            <h4 class="azulMain left bold">PANEL DE UNIVERSIDADES</h4>
             <hr class="mTop0" />
           </div>
 
@@ -66,12 +66,12 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 
               <div class="row">
                 <div class="large-12 columns">
-                  <h4 class="azulMain"><a id="btnNewItem" title="Crear Nuevo">CREAR DISTRIBUIDORA</a></h4>
+                  <h4 class="azulMain"><a id="btnNewItem" title="Crear Nuevo">CREAR UNIVERSIDAD</a></h4>
                   <hr class="mTop0" />
                 </div>
 
                 <div class="large-12 columns">
-                  <label>Distribuidora
+                  <label>Universidad
                     <input type="text" value="" id="txtDistribuidora" placeholder="Nombre de la Distribuidora" />
                   </label>
                 </div>
@@ -96,7 +96,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
               <div class="row">
 
                 <div class="large-12 columns">
-                  <h4 class="azulMain5">DISTRIBUIDORAS</h4>
+                  <h4 class="azulMain5">UNIVERSIDADES</h4>
                   <hr class="mTop0" />
                 </div>
 
@@ -104,7 +104,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
                   <table id="tblDistribuidora" width="100%">
                     <thead>
                       <tr>
-                        <th width="70%">Distribuidora</th>
+                        <th width="70%">Universidades</th>
                         <th width="30%">Acciones</th>
                       </tr>
                     </thead>
@@ -132,7 +132,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 </div>
 
   <div id="myDelete" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <h2 id="modalTitle">BORRAR DISTRIBUIDORA</h2>
+    <h2 id="modalTitle">BORRAR UNIVERSIDAD</h2>
     <p id="modalDescrip" class="rojo">¿Estas seguro de borrarlo?</p>
 
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>

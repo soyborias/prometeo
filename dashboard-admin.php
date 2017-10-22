@@ -87,26 +87,19 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
               <li>
                 <a href="crear-distribuidora.php">
                   <i class="fa fa-university fa-4x"></i>
-                  <h3>Distribuidoras</h3></a>
-                <p>Configuración de distribuidoras > ciudades.</p>
+                  <h3>Universidades</h3></a>
+                <p>Configuración de Universidades.</p>
               </li>
               <?php endif; ?>
               <?php if ( ($_SESSION['rol']) == ROL_ADMIN ): ?>
               <li>
                 <a href="crear-entrenamiento.php">
                   <i class="fa fa-graduation-cap fa-4x"></i>
-                  <h3>Entrenamientos</h3></a>
-                <p>Gestiona, crea y modifica los entrenamientos > cursos > temas.</p>
+                  <h3>Cursos</h3></a>
+                <p>Gestiona, crea y modifica los cursos.</p>
               </li>
               <?php endif; ?>
-              <?php if ( ($_SESSION['rol']) == ROL_ADMIN ): ?>
-              <li>
-                <a href="crear-novedad.php">
-                  <i class="fa fa-gg-circle fa-4x"></i>
-                  <h3>Novedades</h3></a>
-                <p>Gestiona las novedades, mini cursos dentro de la plataforma.</p>
-              </li>
-              <?php endif; ?>
+
               <?php if ( ($_SESSION['rol']) == ROL_ADMIN ): ?>
               <li>
                 <a href="crear-curricula.php">
@@ -118,8 +111,8 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
               <li>
                 <a href="crear-equipo.php">
                   <i class="fa fa-joomla fa-4x"></i>
-                <h3>Equipos</h3></a>
-                <p>Gestiona los equipos.</p>
+                <h3>Carreras</h3></a>
+                <p>Gestiona las carreras y ciclos.</p>
               </li>
               <li>
                 <a href="resultados-generales.php">

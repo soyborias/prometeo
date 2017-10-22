@@ -63,7 +63,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
   $liPerfil  = genPerfilesLI($resPerfil, '');
 
   // Vars
-  $title = 'Panel Usuarios P&G';
+  $title = 'Panel Usuarios';
   include_once('jupiter/code/fxMenu.php');
   $mnuMain = crearMnuAdmin('participante', null);
   $mnuMainMobile = crearMnuAdminMobile('participante', null);
@@ -128,9 +128,9 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
                   <tr>
                     <th width="20%">Nombre</th>
                     <th width="5%">Documento</th>
-                    <th width="10%">Distribuidora</th>
-                    <th width="10%">Sucursal</th>
-                    <th width="10%">Supervisor</th>
+                    <th width="10%">Universidad</th>
+                    <th width="10%">Filial</th>
+                    <th width="10%">Docente</th>
                     <th width="10%">Perfil</th>
                     <th width="5%">Activar</th>
                     <th width="30%">Acciones</th>
@@ -172,7 +172,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 
                     <div class="row">
                       <div class="large-12 columns">
-                        <label>Distribuidora
+                        <label>Universidad
                           <select id="cboBuscarDistro" name="cboBuscarDistro">
                             <?php print($opDistribuidoras); ?>
                           </select>
@@ -182,7 +182,7 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 
                     <div class="row">
                       <div class="large-12 columns">
-                        <label>Sucursal
+                        <label>Filial
                           <select id="cboBuscarSucursal" name="cboBuscarSucursal">
                             <?php print($opSucursales); ?>
                           </select>
@@ -258,12 +258,12 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 <div id="myLocation" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <h2 id="modalTitle">ASIGNAR LOCACIÓN</h2>
 
-  <label>Distribuidora
+  <label>Universidad
     <select id="cboChangeDistribuidora">
       <?php echo $opDistribuidoras; ?>
     </select>
   </label>
-  <label>Sucursal
+  <label>Filial
     <select id="cboChangeSucursal">
       <?php echo $opSucursales; ?>
     </select>
@@ -274,9 +274,9 @@ if ( (isset($_SESSION['username'])) && ( $_SESSION['rol'] == ROL_ADMIN || $_SESS
 </div>
 
 <div id="mySupervisor" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">ASIGNAR SUPERVISOR</h2>
+  <h2 id="modalTitle">ASIGNAR DOCENTE</h2>
 
-  <label>Supervisor
+  <label>Docente
     <select id="cboChangeSupervisor">
       <?php echo $opSuper; ?>
     </select>
