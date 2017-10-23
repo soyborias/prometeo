@@ -230,13 +230,16 @@ function onYouTubeIframeAPIReady() {
         videoId: 'aMK5uDoQXfI',
         playerVars: {
             color: 'white',
-            playlist: ''
+            playlist: '',
+            rel: 0,
+            showinfo: 0
         },
         events: {
             onReady: initialize,
             onStateChange: onPlayerStateChange
         },
-        rel:0
+        rel: 0,
+        showinfo: 0
     });
 }
 
@@ -259,6 +262,7 @@ function initialize(){
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING){
     // Inicia video
+    var label = $('#msgVideo');
     label.removeClass('success').addClass('warning');
     if (nPlay < 1) { grabarAccion('cursoIniciarVideo', 14); }
     nPlay++;
