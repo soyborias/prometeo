@@ -235,7 +235,8 @@ function onYouTubeIframeAPIReady() {
         events: {
             onReady: initialize,
             onStateChange: onPlayerStateChange
-        }
+        },
+        rel:0
     });
 }
 
@@ -258,7 +259,9 @@ function initialize(){
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING){
     // Inicia video
-    iniciarVideo();
+    label.removeClass('success').addClass('warning');
+    if (nPlay < 1) { grabarAccion('cursoIniciarVideo', 14); }
+    nPlay++;
   }
   if (event.data == YT.PlayerState.ENDED) {
     // fin video
