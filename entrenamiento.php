@@ -258,6 +258,7 @@ function initialize(){
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING){
     // Inicia video
+    iniciarVideo();
   }
   if (event.data == YT.PlayerState.ENDED) {
     // fin video
