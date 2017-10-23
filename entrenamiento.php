@@ -226,8 +226,8 @@ if (isset($_SESSION['username'])){
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
-        width: 100%,
-        height: 100%,
+        width: '100%',
+        height: '100%',
         videoId: 'aMK5uDoQXfI',
         playerVars: {
             color: 'white',
