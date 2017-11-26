@@ -193,7 +193,7 @@ if (isset($_SESSION['username'])){
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
   $(document).on('ready', iniciar);
-  var auth  = "";
+  var auth  = 0;
   var link  = "tema.php?pid=";
   var url   = "cuestionario.php?pid=<?php print $pidE; ?>";
   var tema  = "tema.php?pid=<?php print $pidE; ?>";
@@ -227,7 +227,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
         width: '100%',
         height: '100%',
-        videoId: '<?php print $curso_video; ?>', //aMK5uDoQXfI
+        videoId: '<?php print $curso_video; ?>',
         playerVars: {
             color: 'white',
             playlist: '',
