@@ -14,7 +14,7 @@ if ( (isset($_SESSION['username'])) && ($_SESSION['rol']) == ROL_ADMIN ){
   $tblCursos = genCursosTR($resCursos);
 
   // Vars
-  $title = 'Crear Cursos P&G';
+  $title = 'Crear Cursos';
   include_once('jupiter/code/fxMenu.php');
   $mnuMain = crearMnuAdmin('entrenamiento', null);
   $mnuMainMobile = crearMnuAdminMobile('entrenamiento', null);

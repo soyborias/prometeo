@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])){
   $avance  = floatval($puntaje['avance']);
 
   // Vars
-  $title = 'Entrenamiento P&G';
+  $title = 'Entrenamiento';
   include_once('jupiter/code/fxMenu.php');
   $mnuMain = crearMnuMain('dashboard', null);
   $mnuMainMobile = crearMnuMainMobile('dashboard', null);
@@ -227,7 +227,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
         width: '100%',
         height: '100%',
-        videoId: 'aMK5uDoQXfI',
+        videoId: '<?php print $curso_video; ?>', //aMK5uDoQXfI
         playerVars: {
             color: 'white',
             playlist: '',
