@@ -195,7 +195,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
         width: '100%',
         height: '100%',
-        videoId: '<?php print $curso_video; ?>',
+        videoId: '<?php print $video; ?>',
         playerVars: {
             color: 'white',
             playlist: '',
