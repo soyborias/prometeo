@@ -103,7 +103,8 @@ if (isset($_SESSION['username'])){
             <div class="small-12 medium-9 large-9 columns">
               <div class="vPlayer vp-initial">
                 <div class="video">
-                  <iframe id="player2" src="<?php print $video; ?>" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe>
+                  <!-- <iframe id="player2" src="<?php print $video; ?>" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe> -->
+                  <div id="video-placeholder"></div>
                 </div>
                 <span class="status label warning" id="msgVideo"><i class="fa fa-chevron-right"></i> Empezar</span>
                 <span class="lnr lnr-checkmark-circle"></span><i class="fa fa-check"></i> Completo</span>
@@ -157,7 +158,7 @@ if (isset($_SESSION['username'])){
 
 <?php include_once('code/script.php'); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.4/jquery.easypiechart.min.js"></script>
-<script src="//fast.wistia.net/static/iframe-api-v1.js"></script>
+<!-- <script src="//fast.wistia.net/static/iframe-api-v1.js"></script> -->
 <script>
   $(document).on('ready', iniciar);
   var url   = "cuestionario.php?pid=<?php print $pidE; ?>";
@@ -170,6 +171,9 @@ if (isset($_SESSION['username'])){
   var auth    = "";
   var status  = parseInt(<?php print $status; ?>);
   var ajaxReq = "jupiter/api.php";
+  var nPlay  = 0;
+  var player;
+  var time_update_interval;
 
   function iniciar(){
     $(document).foundation();
@@ -178,11 +182,80 @@ if (isset($_SESSION['username'])){
     $('#btnAvanzar').on('click', avanzar);
     //$('#btnCuestionario').attr('disabled','disabled');
 
+/*
     var video = document.getElementById("player2").wistiaApi;
     video.bind("play", function() { iniciarVideo(); });
     video.bind("secondchange", function(t) { onPlaying(t); });
     video.bind("end", function() { terminarVideo(); });
+*/
   };
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('video-placeholder', {
+        width: '100%',
+        height: '100%',
+        videoId: '<?php print $curso_video; ?>',
+        playerVars: {
+            color: 'white',
+            playlist: '',
+            rel: 0,
+            showinfo: 0
+        },
+        events: {
+            onReady: initialize,
+            onStateChange: onPlayerStateChange
+        },
+        rel: 0,
+        showinfo: 0
+    });
+};
+
+function initialize(){
+    // Update the controls on load
+    updateTimerDisplay();
+
+    // Clear any old interval.
+    clearInterval(time_update_interval);
+
+    // Start interval to update elapsed time display and
+    // the elapsed part of the progress bar every second.
+    time_update_interval = setInterval(function () {
+        updateTimerDisplay();
+        //updateProgressBar();
+    }, 1000)
+
+};
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING){
+    // Inicia video
+    var label = $('#msgVideo');
+    label.removeClass('success').addClass('warning');
+    //if (nPlay < 1) { grabarAccion('cursoIniciarVideo', 14); }
+    //nPlay++;
+  }
+  if (event.data == YT.PlayerState.ENDED) {
+    // fin video
+    terminarVideo();
+  }
+}
+
+// This function is called by initialize()
+function updateTimerDisplay(){
+    // Update current time text display.
+    $('#current-time').text(formatTime( player.getCurrentTime() ));
+    $('#duration').text(formatTime( player.getDuration() ));
+};
+
+function formatTime(time){
+    time = Math.round(time);
+
+    var minutes = Math.floor(time / 60),
+    seconds = time - minutes * 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    return minutes + ":" + seconds;
+};
 
   function goLink(e){
     e.preventDefault();
