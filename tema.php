@@ -163,6 +163,7 @@ if (isset($_SESSION['username'])){
   var url   = "cuestionario.php?pid=<?php print $pidE; ?>";
   var tema  = "tema.php?pid=<?php print $pidE; ?>";
   var pid   = <?php print $pid; ?>;
+  var rel   = 0;
   var retry = <?php print $retry; ?>;
   var mTbl  = "<?php print $mTbl; ?>";
   var mID   = "<?php print $pid; ?>";
