@@ -307,6 +307,13 @@ function formatTime(time){
     $('#juegoNext').foundation('reveal', 'open');
   }
 
+  function grabarGame(action, modal){
+    $.post(ajaxReq, {action:action, eAuth:auth, ePid:pid, eRel:rel, eGame:game, eGameId:gameID, eStatus:estado, rand:Math.random()},
+      function(data){
+        //nada
+    });
+  };
+
   function grabarAccion(hito, hitoID){
     $.post(ajaxReq, {action:"updateAction", eAuth:auth, eHito:hito, eHitoID:hitoID, eTabla:mTbl, eRel:mID, eLinaje:linaje, rand:Math.random()},
     function(data){
