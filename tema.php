@@ -43,6 +43,7 @@ if (isset($_SESSION['username'])){
   $nexLinaje  = genNextLinaje($linaje[0]['linaje'], $linajeFull);
 
   $bread   = genBreadCrumbs('dashboard', 3, null, null, $linaje);
+  $entrenamiento_id = encrypt($linaje[0]['entrenamiento_id'], $_SESSION['k']);
 } else {
   // User No logeado
   header ('Location: index.php');
@@ -149,7 +150,7 @@ if (isset($_SESSION['username'])){
 <div id="juegoNext" class="reveal-modal msgOk" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" style="background: url('/code/show-image.php?p=ok&i=celebra') top center no-repeat;">
   <div class="msgDialog">
     <p>Superaste los niveles, ahora pasa al siguiente tema</p>
-    <a href="tema.php?pid=<?php print($pidE);?>" class="btnMsg button large round info">Avanzar</a>
+    <a href="entrenamiento.php?pid=<?php print($entrenamiento_id);?>" class="btnMsg button large round info">Avanzar</a>
   </div>
 </div>
 
