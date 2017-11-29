@@ -165,6 +165,7 @@ if (isset($_SESSION['username'])){
   var pid   = <?php print $pid; ?>;
   var rel   = 0;
   var game  = 0;
+  var gameID = 0;
   var retry = <?php print $retry; ?>;
   var mTbl  = "<?php print $mTbl; ?>";
   var mID   = "<?php print $pid; ?>";
