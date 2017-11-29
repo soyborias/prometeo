@@ -299,7 +299,7 @@ function formatTime(time){
     grabarAccion('juegoFinal1', 18);
     grabarAccion('juegoFinal2', 19);
     grabarAccion('juegoFinal3', 20);
-    //$('#juegoNext').foundation('reveal', 'open');
+    $('#juegoNext').foundation('reveal', 'open');
   }
 
   function grabarAccion(hito, hitoID){
