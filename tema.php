@@ -162,6 +162,7 @@ if (isset($_SESSION['username'])){
   $(document).on('ready', iniciar);
   var url   = "cuestionario.php?pid=<?php print $pidE; ?>";
   var tema  = "tema.php?pid=<?php print $pidE; ?>";
+  var pid   = <?php print $pid; ?>;
   var retry = <?php print $retry; ?>;
   var mTbl  = "<?php print $mTbl; ?>";
   var mID   = "<?php print $pid; ?>";
