@@ -24,6 +24,7 @@ if (isset($_SESSION['username'])){
   // Permisos
   $enroll  = checkEnrollStatus($_SESSION['userID'], 'pg_temas', $pid, $db);
   $status  = ($enroll['status'] !== 'No')  ?  1  :  0;
+  $status2 = $enroll['status'];
 
 //  $resJuegos = getJuegosByUser($_SESSION['userID'], $pid, $db);
 //  $divJuegos = genJuegosDIV($resJuegos);
@@ -177,6 +178,8 @@ if (isset($_SESSION['username'])){
   var nPlay  = 0;
   var player;
   var time_update_interval;
+  var estado  = "<?php print $status; ?>";
+  var estado2 = "<?php print $status2; ?>";
 
   function iniciar(){
     $(document).foundation();
