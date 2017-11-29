@@ -25,14 +25,14 @@ if (isset($_SESSION['username'])){
   $enroll  = checkEnrollStatus($_SESSION['userID'], 'pg_temas', $pid, $db);
   $status  = ($enroll['status'] !== 'No')  ?  1  :  0;
 
-  $resJuegos = getJuegosByUser($_SESSION['userID'], $pid, $db);
-  $divJuegos = genJuegosDIV($resJuegos);
+//  $resJuegos = getJuegosByUser($_SESSION['userID'], $pid, $db);
+//  $divJuegos = genJuegosDIV($resJuegos);
 
   // Vars
   $perfil    = 'vendedor';
 
   $mTbl  = 'pg_temas';
-  $title = 'Tema P&G';
+  $title = 'Tema';
   include_once('jupiter/code/fxMenu.php');
   $mnuMain = crearMnuMain('dashboard', null);
   $mnuMainMobile = crearMnuMainMobile('dashboard', null);
@@ -115,15 +115,8 @@ if (isset($_SESSION['username'])){
               </div>
             </div>
 
-          </div><br/>
+          </div>
 
-          <div class="row">
-            <div class="small-12 columns" id="juegos"><h4>DESAFÍOS DEL TEMA</h4></div>
-              <?php print $divJuegos; ?>
-          </div>
-          <div class="row">
-            Para grabar correctamente los puntajes de los desafios. Estos se deben realizar todos juntos en una misma sesión.
-          </div>
         </div>
 
       </div>
@@ -149,10 +142,10 @@ if (isset($_SESSION['username'])){
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 <div id="juegoNext" class="reveal-modal msgOk" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" style="background: url('/code/show-image.php?p=ok&i=celebra') top center no-repeat;">
-  <h2 id="modalTitle" class="blanco">¡FELICITACIONES!</h2>
-  <div>
-    <p class="lead">Entendiste el video, ahora inicia los juegos</p>
-    <a href="#juegos" class="btnMsg button large round warning" id="btnAvanzar">Avanzar</a>
+  <div class="msgDialog">
+    <?php print($puntos); ?><hr/>
+    <p>Superaste los niveles, ahora pasa al siguiente tema</p>
+    <a href="tema.php?pid=<?php print($pidE);?>" class="btnMsg button large round info">Avanzar</a>
   </div>
 </div>
 
@@ -303,7 +296,10 @@ function formatTime(time){
     label.removeClass('warning').addClass('success');
 
     grabarAccion('temaVerMaterial', 5);
-    $('#juegoNext').foundation('reveal', 'open');
+    grabarAccion('juegoFinal1', 18);
+    grabarAccion('juegoFinal2', 19);
+    grabarAccion('juegoFinal3', 20);
+    //$('#juegoNext').foundation('reveal', 'open');
   }
 
   function grabarAccion(hito, hitoID){
