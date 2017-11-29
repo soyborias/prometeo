@@ -36,7 +36,12 @@ if (isset($_SESSION['username'])){
   include_once('jupiter/code/fxMenu.php');
   $mnuMain = crearMnuMain('dashboard', null);
   $mnuMainMobile = crearMnuMainMobile('dashboard', null);
+
   $linaje  = getLinajeOne(0, 0, $pid, $db);
+  $linajeFull = getLinajeFull($db);
+  $nexLink    = genNextLink($linaje[0]['linaje'], $linajeFull);
+  $nexLinaje  = genNextLinaje($linaje[0]['linaje'], $linajeFull);
+
   $bread   = genBreadCrumbs('dashboard', 3, null, null, $linaje);
 } else {
   // User No logeado
@@ -143,7 +148,6 @@ if (isset($_SESSION['username'])){
 </div>
 <div id="juegoNext" class="reveal-modal msgOk" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" style="background: url('/code/show-image.php?p=ok&i=celebra') top center no-repeat;">
   <div class="msgDialog">
-    <?php print($puntos); ?><hr/>
     <p>Superaste los niveles, ahora pasa al siguiente tema</p>
     <a href="tema.php?pid=<?php print($pidE);?>" class="btnMsg button large round info">Avanzar</a>
   </div>
@@ -296,6 +300,7 @@ function formatTime(time){
     label.removeClass('warning').addClass('success');
 
     grabarAccion('temaVerMaterial', 5);
+    grabarGame("saveGameWinFull", $('#juegoNext'));
     grabarAccion('juegoFinal1', 18);
     grabarAccion('juegoFinal2', 19);
     grabarAccion('juegoFinal3', 20);
