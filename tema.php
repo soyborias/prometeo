@@ -165,21 +165,26 @@ if (isset($_SESSION['username'])){
   var tema  = "tema.php?pid=<?php print $pidE; ?>";
   var pid   = <?php print $pid; ?>;
   var rel   = 0;
-  var game  = 0;
-  var gameID = 0;
   var retry = <?php print $retry; ?>;
-  var mTbl  = "<?php print $mTbl; ?>";
-  var mID   = "<?php print $pid; ?>";
   var link  = ".php?rel=1&pid=<?php print $pidE; ?>";
-  var linaje  = "<?php print $linaje[0]['linaje']; ?>";
-  var auth    = "";
+  var auth    = 0;
   var status  = parseInt(<?php print $status; ?>);
   var ajaxReq = "jupiter/api.php";
-  var nPlay  = 0;
+  var nPlay   = 0;
   var player;
   var time_update_interval;
+
+  var game   = 'j3-';
+  var gameID = "<?php print $gameID; ?>";
+  var mTbl   = "<?php print $mTbl; ?>";
+
+  var mID     = "<?php print $pid; ?>";
   var estado  = "<?php print $status; ?>";
   var estado2 = "<?php print $status2; ?>";
+
+  var linaje     = "<?php print $linaje[0]['linaje']; ?>";
+  var nextLinaje = "<?php print $nexLinaje; ?>";
+  var next       = "<?php print strstr($nexLink, '.', true); ?>";
 
   function iniciar(){
     $(document).foundation();
@@ -308,9 +313,6 @@ function formatTime(time){
     label.removeClass('warning').addClass('success');
 
     grabarAccion('temaVerMaterial', 5);
-    grabarGame("saveGameWinFull", $('#juegoNext'));
-    grabarAccion('juegoFinal1', 18);
-    grabarAccion('juegoFinal2', 19);
     grabarAccion('juegoFinal3', 20);
     $('#juegoNext').foundation('reveal', 'open');
   }
