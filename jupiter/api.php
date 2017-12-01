@@ -1058,7 +1058,7 @@ switch ($action) {
         $estado   = ($duply == 0) ? 'Ganado'         : 'Duplicado';
         $game    .= $pid;
         //$puntaje  = getPuntajeHito($hito, $campo, $db);
-        $puntaje  = $_SESSION[$game]['puntos'];
+        $puntaje  = 0; //$_SESSION[$game]['puntos'];
         $_SESSION['puntos'] += $puntaje;
         $avance   = 0;
         $debug    = $linaje2; // Check pls
