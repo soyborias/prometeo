@@ -313,7 +313,7 @@ function formatTime(time){
     label.removeClass('warning').addClass('success');
 
     grabarAccion('temaVerMaterial', 5);
-    grabarAccion('juegoFinal3', 20);
+    grabarAccion2('juegoFinal3', 20);
     $('#juegoNext').foundation('reveal', 'open');
   }
 
@@ -326,6 +326,15 @@ function formatTime(time){
 
   function grabarAccion(hito, hitoID){
     $.post(ajaxReq, {action:"updateAction", eAuth:auth, eHito:hito, eHitoID:hitoID, eTabla:mTbl, eRel:mID, eLinaje:linaje, rand:Math.random()},
+    function(data){
+      var pje = parseInt($('#lblPuntaje span').text());
+      $('#lblPuntaje span').text( pje + parseInt(data.rpta) );
+    });
+  };
+
+  function grabarAccion2(hito, hitoID){
+    //$.post(ajaxReq, {action:"updateAction", eAuth:auth, eHito:hito, eGame:game, eHitoID:hitoID, eTabla:mTbl, eTblNext:next, eRel:mID, eLinaje:linaje, eStatus:estado, ePid:pid, rand:Math.random()},
+    $.post(ajaxReq, {action:"updateAction", eAuth:auth, eHito:hito, eGame:game, eHitoID:hitoID, eTabla:mTbl, eTblNext:next, eRel:mID, eLinaje:linaje, eStatus:estado, ePid:pid, eStatus2:estado2,  eLinaje2:nextLinaje, rand:Math.random()},
     function(data){
       var pje = parseInt($('#lblPuntaje span').text());
       $('#lblPuntaje span').text( pje + parseInt(data.rpta) );
